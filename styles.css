@@ -48,7 +48,7 @@ nav li:not(:last-child):after {
 
 @media (max-device-width: 767px) {
   nav ul {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 }
 
