@@ -32,7 +32,7 @@ nav li {
 nav li:not(:last-child):after {
   color: #f48fb1;
   content: ' •';
-  padding: 0 3px;
+  padding: 0 5px;
 }
 
 @media (max-device-width: 767px) {
