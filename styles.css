@@ -15,8 +15,22 @@ main {
 }
 
 @media (max-width: 767px) {
+  p {
+    font-size: 1em;
+  }
+
   .content img {
-      max-height: 30vh;
+    max-height: 30vh;
+  }
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.2em;
+  }
+
+  .content img {
+    max-height: 50vh;
   }
 }
 
@@ -31,7 +45,6 @@ main {
 }
 
 p {
-  font-size: 1.2em;
   font-family: 'Open Sans', sa  ns-serif;
   color: #fff;
 }
@@ -48,5 +61,4 @@ a {
 .content img {
   padding: 5px 15px 5px 0;
   float: left;
-  max-height: 50vh;
 }
