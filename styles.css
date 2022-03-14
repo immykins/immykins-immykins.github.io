@@ -1,0 +1,26 @@
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 60vh; */
+  /* background-color: grey; */
+  padding: 1em;
+  /* max-width: 50vw;
+  max-height: 50vw; */
+  border: 1px solid pink;
+}
+
+.flex::after {
+  content: '';
+  padding: 0.5em;
+}
+
+.content {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.content img {
+  max-width: 50vw;
+  max-height: 50vh;
+}
