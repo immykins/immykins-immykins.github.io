@@ -19,9 +19,9 @@ main {
     font-size: 1em;
   }
 
-  .content img {
-    max-height: 30vh;
-  }
+  /* .content img {
+    max-width: 33;
+  } */
 }
 
 @media (min-device-width: 768px) {
@@ -29,9 +29,9 @@ main {
     font-size: 1.2em;
   }
 
-  .content img {
+  /* .content img {
     max-height: 50vh;
-  }
+  } */
 }
 
 .content {
@@ -59,6 +59,7 @@ a {
 }
 
 .content img {
+  max-width: 33vw;
   padding: 5px 15px 5px 0;
   float: left;
 }
