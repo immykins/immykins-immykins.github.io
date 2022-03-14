@@ -14,7 +14,7 @@ main {
   /* border: 1px solid pink; */
 }
 
-@media (max-width: 767px) {
+@media (max-device-width: 767px) {
   p {
     font-size: 1em;
   }
@@ -24,7 +24,7 @@ main {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-device-width: 768px) {
   p {
     font-size: 1.2em;
   }
