@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 body {
   background-color: #1A1A1D;
   /* background-color: #41B3A3; */
@@ -22,7 +24,6 @@ main::after {
 }
 
 .content {
-  
   background-color: #950740;
   /* background-color: rgb(246, 233, 255); */
   display: flex;
@@ -34,7 +35,16 @@ main::after {
 }
 
 p {
+  font-family: 'Open Sans', sa  ns-serif;
   color: #fff;
+}
+/* 
+strong {
+  font-weight: 600;
+} */
+
+a {
+  text-decoration: none;
 }
 
 .content img {
