@@ -23,6 +23,7 @@ nav {
 nav ul {
   list-style-type: none;
   padding-left: 0px;
+  font-size: 1.2em;
 }
 
 nav li {
@@ -35,13 +36,13 @@ nav li:not(:last-child):after {
 }
 
 @media (max-device-width: 767px) {
-  p, ul {
+  p {
     font-size: 1em;
   }
 }
 
 @media (min-device-width: 768px) {
-  p, ul {
+  p {
     font-size: 1.2em;
   }
 }
