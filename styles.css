@@ -57,6 +57,7 @@ nav li:not(:last-child):after {
 p {
   font-family: 'Open Sans', sa  ns-serif;
   color: #fff;
+  padding-bottom: 2px;
 }
 
 a {
