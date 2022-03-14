@@ -35,13 +35,13 @@ nav li:not(:last-child):after {
 }
 
 @media (max-device-width: 767px) {
-  p, a {
+  p, ul {
     font-size: 1em;
   }
 }
 
 @media (min-device-width: 768px) {
-  p, a {
+  p, ul {
     font-size: 1.2em;
   }
 }
