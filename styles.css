@@ -14,6 +14,12 @@ main {
   /* border: 1px solid pink; */
 }
 
+/* @media (min-width: 481px) and (max-width: 767px) {
+  .content {
+      max-width
+  }
+} */
+
 .content {
   /* background-color: #950740; */
   /* background-color: #A16E83; */
@@ -21,7 +27,7 @@ main {
   /* background-color: rgb(246, 233, 255); */
   border: 1px solid lavender;
   padding: 10px 15px;
-  max-width: 50vw;
+  max-width: 950px;
 }
 
 p {
