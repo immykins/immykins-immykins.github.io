@@ -14,11 +14,11 @@ main {
   /* border: 1px solid pink; */
 }
 
-/* @media (min-width: 481px) and (max-width: 767px) {
-  .content {
-      max-width
+@media (max-width: 767px) {
+  .content img {
+      max-height: 30vh;
   }
-} */
+}
 
 .content {
   /* background-color: #950740; */
