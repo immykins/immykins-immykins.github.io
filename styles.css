@@ -20,9 +20,20 @@ nav {
   letter-spacing: 3px;
 }
 
-nav ul {
+ul {
   list-style-type: none;
   padding-left: 0px;
+  color: #fff;
+  font-family: 'Open Sans', sa  ns-serif;
+}
+
+.blog li {
+  /* text-transform: capitalize; */
+  font-size: 1.1em;
+}
+
+.blog li:not(:last-child) {
+  padding-bottom: 25px;
 }
 
 nav li {
@@ -36,7 +47,7 @@ nav li:not(:last-child):after {
 }
 
 @media (max-device-width: 767px) {
-  ul {
+  nav ul {
     font-size: 1.8em;
   }
 }
@@ -46,7 +57,7 @@ nav li:not(:last-child):after {
     font-size: 1.2em;
   }
 
-  ul {
+  nav ul {
     font-size: 1.3em;
   }
 }
