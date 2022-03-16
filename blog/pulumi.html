@@ -64,7 +64,7 @@ const args: LocalProgramArgs = {
 
 export async function deploy(): Promise<OutputMap> {
   console.log("Initialising stack...");
-  const stack = await LocalWorkspace.createOrSelectStack(args);
+  const stack = await LocalWorkspace.createStack(args);
 
   console.log("Setting region...");
   await stack.setConfig("aws:region", { value: "us-west-1" });
@@ -77,14 +77,14 @@ export async function deploy(): Promise<OutputMap> {
 
 export async function destroy() {
   console.log("Selecting stack...");
-  const stack = await LocalWorkspace.createOrSelectStack(args);
+  const stack = await LocalWorkspace.selectStack(args);
 
   console.log("Destroying stack...");
   await stack.destroy({ onOutput: console.log });
 }
 
 export async function getOutputs(): Promise<OutputMap> {
-  const stack = await LocalWorkspace.createOrSelectStack(args);
+  const stack = await LocalWorkspace.selectStack(args);
 
   var outputs = stack.outputs();
 
