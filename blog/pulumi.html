@@ -118,8 +118,8 @@ test('create a user pool and user', () => {
   const phoneNumber = '+12025550195';
 
 // the important part - we've already spun up the infrastructure
-// and we want to access it to test that it's working as expected -
-// the getOutputs here gives me the IDs I need
+// and we want to access it to test that it's working. The
+// getOutputs here gives me the IDs I need
   return automation
     .getOuputs()
     .then((result) => {
