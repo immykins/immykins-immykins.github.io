@@ -48,7 +48,7 @@ nav li:not(:last-child):after {
   }
 
   code {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .blog li {

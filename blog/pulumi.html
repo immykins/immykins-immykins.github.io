@@ -56,7 +56,7 @@ import {
 } from "@pulumi/pulumi/automation";
 import * as upath from "upath";
 
-// my pulumi configuration file that I use for configuring deployments
+// my pulumi deployment config file
 const args: LocalProgramArgs = {
   stackName: "test",
   workDir: upath.joinSafe(__dirname, "..", "..", "pulumi"),
@@ -111,7 +111,7 @@ afterAll(() => {
   return automation.destroy();
 });
 
-// in jest, just return a promise and jest will wait for it to resolve
+// just return a promise and jest will wait for it to resolve
 test('create a user pool and user', () => {
   const phoneNumber = '+12025550195';
 
@@ -119,7 +119,10 @@ test('create a user pool and user', () => {
     .getOuputs()
     .then((result) => {
       return new CognitoUserPool(
-        { ClientId: result.clientID.value, UserPoolId: result.poolID.value }
+        {
+          ClientId: result.clientID.value,
+          UserPoolId: result.poolID.value
+        }
       );
     })
     .then((pool) => {
