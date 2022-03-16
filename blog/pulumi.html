@@ -103,10 +103,12 @@ cognito.test.ts
 import { CognitoUserPool } from '../../src/cognito';
 import automation from './automation';
 
+// spin up automation before running tests
 beforeAll(() => {
   return automation.deploy();
 });
 
+// ... then tear it all down after
 afterAll(() => {
   return automation.destroy();
 });
@@ -115,9 +117,9 @@ afterAll(() => {
 test('create a user pool and user', () => {
   const phoneNumber = '+12025550195';
 
-// the important part - spin up AWS infra, then use the
-// response values for communicating directly with the
-// Cognito User Pool
+// the important part - we've already spun up the infrastructure
+// and we want to access it to test that it's working as expected -
+// the getOutputs here gives me the IDs I need
   return automation
     .getOuputs()
     .then((result) => {
