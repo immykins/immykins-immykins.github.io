@@ -41,8 +41,8 @@
         Lambda. Instead of manually setting up AWS infrastructure I'm doing everything with <a
           href="https://www.pulumi.com/">Pulumi</a>, an
         infrastructure-as-code cloud management tool.</p>
-      <p>The mobile app itself is being written in React Native and uses Jest for testing. I wanted to
-        to use Jest for all of my application testing so I could
+      <p>The mobile app itself is being written in React Native and uses Jest for testing. I wanted
+        to use Jest for <em>all</em> of my application testing so I could
         keep everything in a single repo with a single test runner, and thankfully Pulumi exposes an automation API that
         can be used for
         integration testing.</p>
@@ -93,9 +93,8 @@ export async function getOutputs(): Promise<OutputMap> {
 
 export default { deploy, getOutputs, destroy };
       </code></pre>
-      <p>Here you can see a test for an AWS Cognito User Pool. `src/cognito` is a wrapper around Amazon's
-        `amazon-cognito-identity-js` node package - I'm using it to create a cognito user over their API. The key part
-        is that I'm using automation.getOutputs and using the user pool config values to connect to it via API.</p>
+      <p>Here you can see a test for an AWS Cognito User Pool. `src/cognito` just is a wrapper around Amazon's
+        `amazon-cognito-identity-js` node package - I'm using it to create a cognito user over their API.</p>
       <pre>
         <code>
 cognito.test.ts
@@ -165,7 +164,8 @@ package.json
         pulumi config (and testing) in Go. Not only
         is Go the de-facto
         <em>lingua franca</em> of cloud infrastructure but it also
-        supports Pulumi's <a href="https://www.pulumi.com/docs/guides/testing/integration/">integration testing
+        supports Pulumi's slightly nicer <a href="https://www.pulumi.com/docs/guides/testing/integration/">integration
+          testing
           framework</a>.
       </p>
       <p><a href="index.html">>> more articles</a></p>
