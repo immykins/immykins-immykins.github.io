@@ -115,6 +115,9 @@ afterAll(() => {
 test('create a user pool and user', () => {
   const phoneNumber = '+12025550195';
 
+// the important part - spin up AWS infra, then use the
+// response values for communicating directly with the
+// Cognito User Pool
   return automation
     .getOuputs()
     .then((result) => {
