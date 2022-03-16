@@ -42,9 +42,6 @@
         take over a minute. Tag these tests and only run them before a deployment - they can easily be baked into a
         CI/CD
         system and gate automated deployments.</p>
-      <p>Go is very much the <em>lingua franca</em> of cloud infrastructure so I may end up splitting my pulumi code
-        out
-        and migrating to their integration test framework.</p>
       <pre>
         <code>
 import { CognitoUserPool } from '../../src/cognito';
@@ -76,6 +73,13 @@ test('create a user pool and user', () => {
 });
         </code>
       </pre>
+      <p>In all honesty, I'm considering splitting out my infrastructure code into a separate repo and rewriting the
+        pulumi config (and testing) in Go. Not only
+        is Go the de-facto
+        <em>lingua franca</em> of cloud infrastructure but it also
+        supports Pulumi's <a href="https://www.pulumi.com/docs/guides/testing/integration/">integration testing
+          framework</a>.
+      </p>
     </div>
   </main>
 </body>
