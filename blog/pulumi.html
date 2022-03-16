@@ -43,8 +43,56 @@
         infrastructure-as-code cloud management tool.</p>
       <p>The mobile app itself is being written in React Native and uses Jest for testing. I wanted to
         to use Jest for all of my application testing so I could
-        keep everything in a single repo with a single test runner, and thankfully Pulumi includes an API for
+        keep everything in a single repo with a single test runner, and thankfully Pulumi exposes an automation API that
+        can be used for
         integration testing.</p>
+      <pre><code>
+automation.ts
+
+import {
+  LocalProgramArgs,
+  LocalWorkspace,
+  OutputMap
+} from "@pulumi/pulumi/automation";
+import * as upath from "upath";
+
+// my pulumi configuration file that I use for configuring deployments
+const args: LocalProgramArgs = {
+  stackName: "test",
+  workDir: upath.joinSafe(__dirname, "..", "..", "pulumi"),
+};
+
+export async function deploy(): Promise<OutputMap> {
+  console.log("Initialising stack...");
+  const stack = await LocalWorkspace.createOrSelectStack(args);
+
+  console.log("Setting region...");
+  await stack.setConfig("aws:region", { value: "us-west-1" });
+
+  console.log("Run update...");
+  const up = await stack.up({ onOutput: console.log });
+
+  return up.outputs;
+}
+
+export async function destroy() {
+  console.log("Selecting stack...");
+  const stack = await LocalWorkspace.createOrSelectStack(args);
+
+  console.log("Destroying stack...");
+  await stack.destroy({ onOutput: console.log });
+}
+
+export async function getOutputs(): Promise<OutputMap> {
+  const stack = await LocalWorkspace.createOrSelectStack(args);
+
+  var outputs = stack.outputs();
+
+  return outputs;
+}
+
+export default { deploy, getOutputs, destroy };
+      </code></pre>
       <p>Here you can see a test for an AWS Cognito User Pool. `src/cognito` is a wrapper around Amazon's
         `amazon-cognito-identity-js` node package - I'm using it to create a cognito user over their API. The key part
         is that I'm using automation.getOutputs and using the user pool config values to connect to it via API.</p>
