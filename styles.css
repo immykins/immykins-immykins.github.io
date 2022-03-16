@@ -30,7 +30,7 @@ ul {
 
 .blog li {
   /* text-transform: capitalize; */
-  font-size: 1.1em;
+  font-size: 1.2rem;
 }
 
 .blog li:not(:last-child) {
