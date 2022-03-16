@@ -35,13 +35,19 @@
   <main>
     <div class="content blog">
       <h1>Integration testing your cloud infrastucture with Pulumi and Jest</h1>
-      <p>Pulumi is typescript IaaC. They have a <a href="https://www.pulumi.com/docs/guides/testing/integration/">cool
-          thing</a> written in Go, but I really just wanted to use Jest for all of my application testing so I could
-        keep everything in a single repo with a single test runner.</p>
-      <p>The downside is that it's slow - spinning up and tearing down infrastructure, in the simplest of cases, will
-        take over a minute. Tag these tests and only run them before a deployment - they can easily be baked into a
-        CI/CD
-        system and gate automated deployments.</p>
+      <p>I've been hacking on a cool personal project lately (a queer dating app) and I've architected it to be
+        serverless
+        using AWS
+        Lambda. Instead of manually setting up AWS infrastructure I'm doing everything with <a
+          href="https://www.pulumi.com/">Pulumi</a>, an
+        infrastructure-as-code cloud management tool.</p>
+      <p>The mobile app itself is being written in React Native and uses Jest for testing. I wanted to
+        to use Jest for all of my application testing so I could
+        keep everything in a single repo with a single test runner, and thankfully Pulumi includes an API for
+        integration testing.</p>
+      <p>Here you can see a test for an AWS Cognito User Pool. `src/cognito` is a wrapper around Amazon's
+        `amazon-cognito-identity-js` node package - I'm using it to create a cognito user over their API. The key part
+        is that I'm using automation.getOutputs and using the user pool config values to connect to it via API.</p>
       <pre>
         <code>
 cognito.test.ts
@@ -87,6 +93,11 @@ package.json
 },
         </code>
       </pre>
+      <p>The downside to this approach to testing is that it's slow - spinning up and tearing down infrastructure, in
+        the simplest of cases, can take well over a minute. Tag these tests and only run them before a deployment - they
+        can easily be baked into a
+        CI/CD
+        system and gate automated deployments.</p>
       <p>In all honesty, I'm considering splitting out my infrastructure code into a separate repo and rewriting the
         pulumi config (and testing) in Go. Not only
         is Go the de-facto
