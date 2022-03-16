@@ -44,6 +44,8 @@
         system and gate automated deployments.</p>
       <pre>
         <code>
+cognito.test.ts
+
 import { CognitoUserPool } from '../../src/cognito';
 import automation from './automation';
 
@@ -71,6 +73,18 @@ test('create a user pool and user', () => {
       expect(result.getUsername()).toBe(phoneNumber);
     });
 });
+        </code>
+      </pre>
+
+      <p>The default timeout for Jest tests is five seconds, which isn't nearly enough to finish spinning up and
+        destroying infrastructure. Mine takes about thirty seconds so I've updated the timeout to a minute.</p>
+      <pre>
+        <code>
+package.json
+
+"jest": {
+  "testTimeout": 60000
+},
         </code>
       </pre>
       <p>In all honesty, I'm considering splitting out my infrastructure code into a separate repo and rewriting the
