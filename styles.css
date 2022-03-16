@@ -51,6 +51,10 @@ nav li:not(:last-child):after {
   nav ul {
     font-size: 2rem;
   }
+
+  code {
+    font-size: 1.5em;
+  }
 }
 
 @media (min-device-width: 768px) {
