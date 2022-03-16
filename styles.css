@@ -28,11 +28,6 @@ ul {
   font-family: 'Open Sans', sans-serif;
 }
 
-.blog li {
-  /* text-transform: capitalize; */
-  font-size: 1.2rem;
-}
-
 .blog li:not(:last-child) {
   padding-bottom: 25px;
 }
@@ -55,6 +50,10 @@ nav li:not(:last-child):after {
   code {
     font-size: 1.5em;
   }
+
+  .blog li {
+    font-size: 1.6rem;
+  }
 }
 
 @media (min-device-width: 768px) {
@@ -64,6 +63,10 @@ nav li:not(:last-child):after {
 
   nav ul {
     font-size: 1.3rem;
+  }
+
+  .blog li {
+    font-size: 1.2rem;
   }
 }
 
