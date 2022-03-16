@@ -118,7 +118,9 @@ test('create a user pool and user', () => {
   return automation
     .getOuputs()
     .then((result) => {
-      return new CognitoUserPool({ ClientId: result.clientID.value, UserPoolId: result.poolID.value });
+      return new CognitoUserPool(
+        { ClientId: result.clientID.value, UserPoolId: result.poolID.value }
+      );
     })
     .then((pool) => {
       return pool.createUser(phoneNumber);
