@@ -45,7 +45,37 @@
       <p>Go is very much the <em>lingua franca</em> of cloud infrastructure so I may end up splitting my pulumi code
         out
         and migrating to their integration test framework.</p>
-      <code>this is some code</code>
+      <pre>
+        <code>
+import { CognitoUserPool } from '../../src/cognito';
+import automation from './automation';
+
+beforeAll(() => {
+  return automation.deploy();
+});
+
+afterAll(() => {
+  return automation.destroy();
+});
+
+// in jest, just return a promise and jest will wait for it to resolve
+test('create a user pool and user', () => {
+  const phoneNumber = '+13152563868';
+
+  return automation
+    .getOuputs()
+    .then((result) => {
+      return new CognitoUserPool({ ClientId: result.clientID.value, UserPoolId: result.poolID.value });
+    })
+    .then((pool) => {
+      return pool.createUser(phoneNumber);
+    })
+    .then((result) => {
+      expect(result.getUsername()).toBe(phoneNumber);
+    });
+});
+        </code>
+      </pre>
     </div>
   </main>
 </body>
