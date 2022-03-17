@@ -157,8 +157,10 @@ package.json
         CI/CD
         system and gate automated deployments.</p>
       <p>My other suggestion would be to set up a separate AWS user for running tests so that you can keep it completely
-        separate from your prod environment. I'd also tag any infra spun up by tests so you know it was created by a
-        test runner. You could even use something like CloudWatch to alert youif something goes wrong and you have
+        separate from your prod environment. Your test runner shouldn't have permissions to take down prod - would be an
+        unpleasant way to cause an outage via a misconfigured test teardown. I'd also tag any infra spun up by tests so
+        you know it was created by a
+        test runner. You could even use something like CloudWatch to alert you if something goes wrong and you have
         lingering test infra.</p>
       <p>In all honesty, I'm considering splitting out my infrastructure code into a separate repo and rewriting the
         pulumi config (and testing) in Go. Not only
