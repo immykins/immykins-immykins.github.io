@@ -13,3 +13,4 @@ Today I learned:
 - Async / await / async fns use promises internally
 - the new fetch API returns a promise
 - async is obviously more readable than promises, but it also is easier to debug (the compiler won't step over it)
+- odd numbered releases of Node aren't meant to be used for production, they're essentially for testing purposes and new features. Even numbered releases are considered in "long term support" after six months and meant for production use.
