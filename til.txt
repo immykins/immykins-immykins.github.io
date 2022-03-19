@@ -1,0 +1,11 @@
+Today I learned:
+
+3/18:
+- fr measurement unit in css (fraction, useful for grid layout)
+- nodejs theory: the event loop, call stack (a LIFO stack), deferring via the message queue
+- the es6 job queue was created for promises in order to execute them asap (right after the current fn) instead of waiting for the stack to empty
+- process.nextTick(): a tick is one full trip of the event loop. Passing a fn to process.nextTick() will make it execute at the beginning of the next tick, whereas setTimeout(() =>, 0) executes at the end of the next tick.
+- javascript's alert function is one of the few things in the language that blocks the event loop
+- setImmediate is, in theory, faster than setTimeout but slower than nextTick
+- I don't really understand I/O Queue vs Check Queue vs Timer Queue
+- nextTick runs next, regardless of the phase you're in in the event loop; if you make recursive calls you can starve your I/O (very bad in a single-threaded environment)
