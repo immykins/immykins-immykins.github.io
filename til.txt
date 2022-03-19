@@ -9,3 +9,7 @@ Today I learned:
 - setImmediate is, in theory, faster than setTimeout but slower than nextTick
 - I don't really understand I/O Queue vs Check Queue vs Timer Queue
 - nextTick runs next, regardless of the phase you're in in the event loop; if you make recursive calls you can starve your I/O (very bad in a single-threaded environment)
+3/19:
+- Async / await / async fns use promises internally
+- the new fetch API returns a promise
+- async is obviously more readable than promises, but it also is easier to debug (the compiler won't step over it)
