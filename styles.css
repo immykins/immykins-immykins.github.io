@@ -89,6 +89,12 @@ h1 {
   margin-bottom: 30px;
 }
 
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  /* margin-bottom: 30px; */
+}
+
 a {
   font-weight: 600;
   text-decoration: none;
