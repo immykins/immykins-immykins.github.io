@@ -86,9 +86,7 @@ export async function destroy() {
 export async function getOutputs(): Promise<OutputMap> {
   const stack = await LocalWorkspace.selectStack(args);
 
-  var outputs = stack.outputs();
-
-  return outputs;
+  return stack.outputs();
 }
 
 export default { deploy, getOutputs, destroy };
